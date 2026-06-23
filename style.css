@@ -121,3 +121,37 @@ body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     color: #fff;
 }
+
+/* Warna Putih & Basic Nav */
+.navbar {
+  background: #002e63;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+/* Dropdown buat HP */
+.nav-toggle { display: none; }
+.nav-toggle-label { cursor: pointer; display: none; }
+
+@media (max-width: 768px) {
+  .nav-toggle-label { display: block; }
+  .nav-links {
+    display: none; /* Sembunyiin menu pas di HP */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #002e63;
+  }
+  
+  /* Munculin pas tombol diklik */
+  .nav-toggle:checked ~ .nav-links { display: flex; }
+}
